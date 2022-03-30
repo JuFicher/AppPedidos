@@ -1,0 +1,62 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    
+    <ion-row>
+      <ion-col>
+        <ion-title> UniFcv Salgados </ion-title>
+      </ion-col>
+    </ion-row>
+    
+    <!-- <ion-segment [(ngModel)]="segment" (ionChange)="change()">
+        <ion-segment-button value="0">
+            <ion-label> Pizzas </ion-label>
+        </ion-segment-button>
+        <ion-segment-button value="1">
+            <ion-label> Assados </ion-label>
+        </ion-segment-button>
+        </ion-segment-button value="2">
+            <ion-label>Hamburguers</ion-label>
+        </ion-segment-button>
+        </ion-segment-button value="3">
+            <ion-label>Cachorrão</ion-label>
+        </ion-segment-button>
+    </ion-segment> -->
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row class="ion-align-items-center row-container">
+    <ion-col size="6" *ngFor="let produto of listaProdutos; let ix = index">
+      <ion-row>
+        <ion-col size="12" class="card-produto">
+          
+          <ion-row>
+            <ion-col size="12" class="img-produto">
+              <img [src]="pathImgs + produto.imagem"/>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="nome-produto">
+              {{produto.nome}}
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="valor-produto">
+              {{ formataValor(produto.valor) }}
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="12" class="col-botao-detalhes">
+              <span class="botao-detalhes"> Detalhes </span>
+            </ion-col>
+          </ion-row>
+
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>
